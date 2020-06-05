@@ -21,7 +21,7 @@ Test if docker-machine is installed
 ```
 docker-machine -version
 ```
-To spin up a VM use docher-machine:
+To spin up a VM use docker-machine:
 ```
 docker-machine create -d generic \
 --generic-ssh-user vagrant \
