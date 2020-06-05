@@ -14,4 +14,18 @@ sudo sh install-docker-machine.sh
 ```
 
 Test to see if you can connect to the vagrant vm. The "vagrant ssh-config" will give you the ssh connection config.
-
+```
+vagrant ssh-config
+```
+Test if docker-machine is installed
+```
+docker-machine -version
+```
+To spin up a VM use docher-machine:
+```
+docker-machine create -d generic \
+--generic-ssh-user vagrant \
+--generic-ssh-key ~/.vagrant.d/insecure_private_key \
+--generic-ip-address <IP address of VM> \
+<name of VM>
+```

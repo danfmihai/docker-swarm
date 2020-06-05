@@ -13,3 +13,4 @@ unzip vagra*
 sudo mv vagrant /usr/local/bin
 vagrant up
 vagrant ssh-config
+docker-machine -version
