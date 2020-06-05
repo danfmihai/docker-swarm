@@ -21,11 +21,12 @@ Test if docker-machine is installed
 ```
 docker-machine -version
 ```
-To spin up a VM use docker-machine:
+To spin up a VM use docker-machine (check port no):
 ```
 docker-machine create -d generic \
 --generic-ssh-user vagrant \
 --generic-ssh-key ~/.vagrant.d/insecure_private_key \
---generic-ip-address <IP address of VM> \
+--generic-ssh-port 2222 \
+--generic-ip-address 127.0.0.1 \
 <name of VM>
 ```
