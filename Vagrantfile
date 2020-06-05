@@ -1,5 +1,5 @@
 Vagrant.configure(2) do |config|
-        config.vm.define "docker-sqarm-box" do |devbox|
+        config.vm.define "docker-swarm-box" do |devbox|
                 devbox.vm.box = "ubuntu/bionic64"
                 devbox.vm.network "forwarded_port", guest: 2376, host: 2376
                 devbox.vm.network "private_network", ip: "192.168.199.9"
