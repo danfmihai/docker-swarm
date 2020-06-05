@@ -8,7 +8,9 @@ base=https://github.com/docker/machine/releases/download/v0.16.0 &&
 
 cd docker-swarm
 sudo chmod +x install-docker-machine.sh
-wget https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_linux_amd64.zip
+if [ ! -f "vagrant_2.2.9_linux_amd64.zip" ]; then
+  wget https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_linux_amd64.zip
+fi  
 unzip vagra*
 sudo mv vagrant /usr/local/bin
 vagrant up

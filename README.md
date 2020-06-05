@@ -9,8 +9,8 @@ To install vagrant and run the script to install docher-machine run:
 ```
 git clone https://github.com/danfmihai/docker-swarm.git
 cd docker-swarm
-sudo chmod +x install-docker-machine.sh
-sudo sh install-docker-machine.sh
+chmod +x install-docker-machine.sh
+sh install-docker-machine.sh
 ```
 
 Test to see if you can connect to the vagrant vm. The "vagrant ssh-config" will give you the ssh connection config.
