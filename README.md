@@ -28,5 +28,5 @@ docker-machine create -d generic \
 --generic-ssh-key ~/.vagrant.d/insecure_private_key \
 --generic-ssh-port 2222 \
 --generic-ip-address 127.0.0.1 \
-<name of VM>
+docker-swarm-box
 ```
