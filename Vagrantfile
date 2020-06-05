@@ -5,7 +5,8 @@ Vagrant.configure(2) do |config|
                 devbox.vm.network "private_network", ip: "192.168.199.9"
                 devbox.vm.hostname = "docker-swarm-box"
                 devbox.vm.provision "shell", path: "scripts/install.sh"
-                devbox.disksize.size = '50GB'        
+                devbox.disksize.size = '50GB' 
+                devbox.ssh.insert_key = false      
                 devbox.vm.provider "virtualbox" do |vb|
                     vb.name = 'docker-compose-vm'
                     vb.memory = 4096
