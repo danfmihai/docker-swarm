@@ -12,6 +12,8 @@ if [ ! -f "vagrant_2.2.9_linux_amd64.zip" ]; then
 fi  
 unzip vagra*
 sudo mv vagrant /usr/local/bin
+vagrant halt
+vagrant -f destroy
 vagrant up
 vagrant ssh-config
 docker-machine -version
