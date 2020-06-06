@@ -46,3 +46,8 @@ Add worker to swarm
 ```
 docker swarm join --token SWMTKN-1-5bo3r88omvpmt51tots4lrogxo0a4pw4v01rt7umwswbsgihdh-9i0g0v5tu8kkckbxdclopd4z9 192.168.199.9:2377
 ```
+Get more info about nodes
+```
+docker node ls
+docker node inspect --pretty self
+```
