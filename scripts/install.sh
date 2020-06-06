@@ -3,6 +3,9 @@
 # remove comment if you want to enable debugging
 #set -x
 
+username=$(id -un)
+group_user=$(id -gn)
+
 if [ -e /etc/redhat-release ] ; then
   REDHAT_BASED=true
 fi
@@ -10,10 +13,10 @@ fi
 TERRAFORM_VERSION="0.12.26"
 PACKER_VERSION="1.5.6"
 # create new ssh key
-[[ ! -f /home/ubuntu/.ssh/mykey ]] \
-&& mkdir -p /home/ubuntu/.ssh \
-&& ssh-keygen -f /home/ubuntu/.ssh/mykey -N '' \
-&& chown -R ubuntu:ubuntu /home/ubuntu/.ssh
+[[ ! -f /home/$username/.ssh/mykey ]] \
+&& mkdir -p /home/$username/.ssh \
+&& ssh-keygen -f /home/$username/.ssh/mykey -N '' \
+&& chown -R $username:$group_user /home/$username/.ssh
 
 # install packages
 if [ ${REDHAT_BASED} ] ; then

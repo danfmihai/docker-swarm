@@ -74,3 +74,20 @@ Then remove the node from swarm on the master node
 docker node rm docker-swarm-worker2 
 docker node ls
 ```
+Scaling the service from 3 to 6 replicas ( running on master)
+```
+docker service scale web-server=6
+docker service ps web-server
+```
+If we want to update the service for example change the nginx image from latest to alpine, will update all workers
+```
+docker service update --image nginx:alpine web-server
+docker service inspect --pretty web-server
+```
+Removing the service
+```
+docker service rm web-server
+docker ps -a
+
+```
+
