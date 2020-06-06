@@ -31,3 +31,6 @@ docker-machine create -d generic \
 <name-of-vm>
 ```
 Check the script for more info 'install-docker-machine.sh'
+
+The "dm-vm.sh" script will create 3 docker nodes for docker swarm master,worker1, worker2
+It will be run after the creation of the vagrant VMs called (vm-master,vm-worker1,vm-worker2)

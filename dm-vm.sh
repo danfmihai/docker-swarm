@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Will create 3 docker nodes for docker swarm master,worker1, worker2
+
+
 ip=8
 
 for i in master worker1 worker2;  do
