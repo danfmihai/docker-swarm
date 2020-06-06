@@ -1,5 +1,5 @@
 Vagrant.configure(2) do |config|
-        config.vm.define "docker-swarm-master", primary: true do |master|
+        config.vm.define "vm-master", primary: true do |master|
                 master.vm.box = "ubuntu/bionic64"
                 master.vm.network "forwarded_port", guest: 2376, host: 2376
                 master.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh"
@@ -17,7 +17,7 @@ Vagrant.configure(2) do |config|
                 end
         end
         
-        config.vm.define "docker-swarm-worker1" do |worker1|
+        config.vm.define "vm-worker1" do |worker1|
                 worker1.vm.box = "ubuntu/bionic64"
                 worker1.vm.network "forwarded_port", guest: 2376, host: 2377
                 worker1.vm.network "private_network", ip: "192.168.199.10"
@@ -35,7 +35,7 @@ Vagrant.configure(2) do |config|
                 end
         end
 
-        config.vm.define "docker-swarm-worker2" do |worker2|
+        config.vm.define "vm-worker2" do |worker2|
                 worker2.vm.box = "ubuntu/bionic64"
                 worker2.vm.network "forwarded_port", guest: 2376, host: 2378
                 worker2.vm.network "private_network", ip: "192.168.199.11"
