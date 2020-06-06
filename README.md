@@ -67,9 +67,10 @@ docker node update --availability drain docker-swarm-worker2
 ```
 If we want to remode the node docker-swarm-worker2 we get an error. We need to leave the swarm from the vm-worker2 machine
 ```
-docker nswarm leave
+docker swarm leave
 ```
 Then remove the node from swarm on the master node
 ```
 docker node rm docker-swarm-worker2 
+docker node ls
 ```
