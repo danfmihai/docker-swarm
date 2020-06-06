@@ -34,3 +34,15 @@ Check the script for more info 'install-docker-machine.sh'
 
 The "dm-vm.sh" script will create 3 docker nodes for docker swarm master,worker1, worker2
 It will be run after the creation of the vagrant VMs called (vm-master,vm-worker1,vm-worker2)
+
+# Add the master vm to swarm
+```
+#activating master
+eval $(docker-machine env vm-master)
+#init swarm
+docker swarm init --advertise-addr 192.168.199.9 --listen-addr 0.0.0.0
+```
+Add worker to swarm
+```
+docker swarm join --token SWMTKN-1-5bo3r88omvpmt51tots4lrogxo0a4pw4v01rt7umwswbsgihdh-9i0g0v5tu8kkckbxdclopd4z9 192.168.199.9:2377
+```
