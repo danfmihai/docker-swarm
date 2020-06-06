@@ -1,4 +1,9 @@
 #!/bin/bash
+
+#variablbes
+
+VAGRANT_VERSION=2.2.9
+
 echo "Installing... DOCKER-MACHINE"
 echo
 base=https://github.com/docker/machine/releases/download/v0.16.0 &&
@@ -7,13 +12,13 @@ base=https://github.com/docker/machine/releases/download/v0.16.0 &&
   chmod +x /usr/local/bin/docker-machine
 
 sudo chmod +x install-docker-machine.sh
-if [ ! -f "vagrant_2.2.9_linux_amd64.zip" ]; then
-  wget https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_linux_amd64.zip
+if [ ! -f "vagrant_${VAGRANT_VERSION}.zip" ]; then
+  wget https://releases.hashicorp.com/vagrant/$VAGRANT_VERSION/vagrant_$VAGRANT_VERSION_linux_amd64.zip
 fi  
 unzip vagra*
 sudo mv vagrant /usr/local/bin
 vagrant halt
-vagrant -f destroy
+vagrant destroy -f
 vagrant up
 vagrant ssh-config
 docker-machine -version
