@@ -11,9 +11,9 @@ base=https://github.com/docker/machine/releases/download/v0.16.0 &&
   sudo mv /tmp/docker-machine /usr/local/bin/docker-machine &&
   chmod +x /usr/local/bin/docker-machine
 
-sudo chmod +x install-docker-machine.sh
-if [ ! -f "vagrant_${VAGRANT_VERSION}.zip" ]; then
-  wget https://releases.hashicorp.com/vagrant/$VAGRANT_VERSION/vagrant_$VAGRANT_VERSION_linux_amd64.zip
+ chmod +x install-docker-machine.sh
+if [ ! -f "vagrant_*" ]; then
+  wget https://releases.hashicorp.com/vagrant/$VAGRANT_VERSION/vagrant_${VAGRANT_VERSION}_linux_amd64.zip
 fi  
 unzip vagra*
 sudo mv vagrant /usr/local/bin
