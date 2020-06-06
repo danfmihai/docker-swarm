@@ -51,3 +51,25 @@ Get more info about nodes
 docker node ls
 docker node inspect --pretty self
 ```
+### add a service
+Ex. Add service of a web server nginx on with 3 replicas
+```
+docker service create --name web-server -p 8080:80 --replicas 3 nginx:latest
+```
+verify the service
+```
+docker service ls
+docker service ps web-server
+```
+Test by draining a node to see if cluster still works
+```
+docker node update --availability drain docker-swarm-worker2
+```
+If we want to remode the node docker-swarm-worker2 we get an error. We need to leave the swarm from the vm-worker2 machine
+```
+docker nswarm leave
+```
+Then remove the node from swarm on the master node
+```
+docker node rm docker-swarm-worker2 
+```
