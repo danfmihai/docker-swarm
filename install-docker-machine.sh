@@ -17,8 +17,13 @@ if [ ! -f "vagrant_${VAGRANT_VERSION}.zip" ]; then
 fi  
 unzip vagra*
 sudo mv vagrant /usr/local/bin
+rm -rf vagrant*
 vagrant halt
 vagrant destroy -f
 vagrant up
 vagrant ssh-config
 docker-machine -version
+
+sh ./dm-vm.sh
+
+
