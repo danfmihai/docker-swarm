@@ -90,4 +90,6 @@ docker service rm web-server
 docker ps -a
 
 ```
-
+###  When done remove all installation
+```
+sh remove-all.sh
