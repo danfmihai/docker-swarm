@@ -1,3 +1,4 @@
 .*
 !/.gitignore
 ubuntu*
+vagrant_*
