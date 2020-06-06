@@ -21,9 +21,10 @@ rm -rf vagrant*
 vagrant halt
 vagrant destroy -f
 vagrant up
-vagrant ssh-config
+vagrant ssh-config >> ~/.ssh/config
 docker-machine -version
-
+vagrant ssh-config
 sh ./dm-vm.sh
+
 
 

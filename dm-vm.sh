@@ -21,6 +21,7 @@ echo
 done
 
 echo "Finished!"
+echo
 echo "List the docker machines:"
 docker-machine ls
 echo
@@ -32,3 +33,4 @@ docker-machine env vm-worker2
 eval $(docker-machine env vm-master)
 #init swarm
 docker swarm init --advertise-addr 192.168.199.9 --listen-addr 0.0.0.0
+docker node ls
