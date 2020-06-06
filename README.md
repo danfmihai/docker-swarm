@@ -27,6 +27,7 @@ docker-machine create -d generic \
 --generic-ssh-user vagrant \
 --generic-ssh-key ~/.vagrant.d/insecure_private_key \
 --generic-ssh-port 2222 \
---generic-ip-address 127.0.0.1 \
+--generic-ip-address <ip of vagrant VM> \
 <name-of-vm>
 ```
+Check the script for more info 'install-docker-machine.sh'
